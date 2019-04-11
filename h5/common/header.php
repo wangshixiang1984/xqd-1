@@ -7,6 +7,7 @@
     <title>首页</title>
     <link rel="stylesheet" href="/h5/public/css/mui.css">
     <link rel="stylesheet" href="/h5/public/css/mui.picker.min.css">
+    <link rel="stylesheet" href="/h5/public/css/swiper.css">
     <link rel="stylesheet" href="/h5/public/css/style.css">
     <script src="/h5/public/js/jquery.min.js"></script>
     <script src="/h5/public/js/common.js"></script>

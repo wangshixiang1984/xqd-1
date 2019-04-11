@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./public/css/swiper.css">
+
 <script src="./public/js/swiper.js"></script>
 <style>
 .index-bullet-active{

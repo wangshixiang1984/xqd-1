@@ -1268,6 +1268,14 @@ nav.menu.com .item > li{
     color: #fff;
     text-align: center;
 }
+.btn.btn-line{
+    border: 1px solid #eee;
+    text-align: center;
+}
+.btn.btn-line.purple{
+    border-color: #ee13fc;
+    color: #ee13fc;
+}
 /* 领队部分 */
 .lde-wp{
    
@@ -1393,7 +1401,152 @@ nav.menu.com .item > li{
     padding: 0.05rem 0;
     border-bottom: 1px dashed #eee;
 }
+.ld-con .xl li > a{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 行程详情 */
+.row-lr{
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.row-lr::after{
+    content: "";
+    height: 0px;
+    display: block;
+    clear: both;
+}
+.row-lr .col-l{
+    float: left;
+}
+.row-lr .col-r{
+    float: right;
+}
+.brd-btm-das{
+    border-bottom: 1px dashed #2f78a3;
+}
+.dt-head{
+    padding-bottom: 0.2rem;
+}
+.dt-head h1{
+    font-size: 0.16rem;
+    padding: 0.1rem;
+    text-align: center;
+}
+.dt-head .lm{
+    color: #fff;
+    width: 45%;
+    background: -webkit-linear-gradient(top,#3f76b0, #90c2f7); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom,#3f76b0, #90c2f7); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom,#3f76b0, #90c2f7); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom,#3f76b0, #90c2f7);
+}
+.dt-head .lm li{
+    padding: 0.08rem 0.05rem;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+.dt-head .lm li .lis{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    /* bottom: 0; */
+    top: 0.35rem;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #eee;
+    display: none;
+}
+.dt-head .lm li .lis > p{
+    border-bottom: 1px solid #eee;
+    padding: 0.02rem;
+    font-size: 0.12rem;
+}
+.dt-head .lm li i{
+    margin-right: 0.05rem;
+}
+.dt-head .rt{
+    width: 55%;
+    max-height: 2.3rem;
+    overflow: hidden;
+}
+.xc-wp .tit{
+    font-size: 0.16rem;
+    border-left: 4px solid #90c2f7;
+    padding: 0.05rem 0 0.05rem 0.15rem;
+    font-weight: bold;
+}
+/* .xc-wp .des{
+    height: 0.6rem;
+} */
+.dt-xc{
 
+}
+.dt-xc .day{
+    background-color: #90c2f7;
+    padding: 0.02rem 0.1rem;
+    color: #fff;
+    font-size: 0.16rem;
+    display: inline-block;
+    margin-top: 0.1rem;
+    box-shadow: 0 0 4px #8ccfea;
+    font-weight: bold;
+}
+.dt-xc .js{
+    padding: 0.05rem 0;
+    line-height: 0.22rem;
+    /* font-size: 0.16rem; */
+}
+.dt-xc .js img{
+    width: 0.25rem;
+    height: auto;   
+}
+.dt-xc .pic{
+    margin-top: 0.1rem;
+    /* max-height: 1.5rem; */
+    overflow: hidden;
+}
+.dt-fy .con,
+.dt-fy.sx .con{
+    position: relative;
+    padding: 0.1rem;
+    background-color: #f4faff;
+    padding-bottom: 0.3rem;
+}
+.dt-fy.sx .con{
+    background-color: #fdfaff;
+}
+.dt-fy .con i{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0.15rem solid #e0eefe;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    right: 0;
+    bottom: 0;
+}
+.dt-fy .t{
+    padding: 0.1rem 0;
+    color: #4994e3;
+    font-size: 0.16rem;
+}
+
+/* 攻略详情页 */
+.gl-wp h1{
+    font-size: 0.16rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.1rem 0;
+    line-height: 1.5;
+}
+.gl-wp section p{
+    line-height: 0.2rem;
+    margin: 0.05rem 0;
+}
 
 /* 汽车租赁详情 */
 .cinfo-wp h1{
@@ -1447,4 +1600,10 @@ nav.menu.com .item > li{
     top: 40%;
     text-align: center;
     line-height: 0.4rem;
+}
+/* 加载中 */
+.loading{
+    text-align: center;
+    padding: 10px;
+    color: #666;
 }
