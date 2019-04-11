@@ -4,7 +4,7 @@ include('../conf/log.class.php');
 
 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$pageSize = 10;
+$pageSize = 5;
 
 //所有行程,分页
 //默认查询所有

@@ -26,7 +26,7 @@
     </div>
 </div>
 <script id="list" type="text/html">
-    {{if list.totalNum}}
+    <!-- {{if list.totalNum}} -->
         {{each list.list data index}}
         <a href="<?php echo $rootLink.'detail/index.php?id='; ?>{{data.id}}" class="row mt10 yj brd-btm">
             <div class="m-mod">
@@ -43,9 +43,9 @@
             </div>
         </a>
         {{/each}}
-    {{else}}
+    <!-- {{else}}
         <div class="t-c">没有更多数据了！</div>
-    {{/if}}
+    {{/if}} -->
 </script>
 <script type="text/javascript" charset="utf-8">
    
@@ -54,25 +54,26 @@
     var page;
     var infoObj = {
         data:null,
-        list: [],
         isLoading: false,
+        isEnd: false,
         refresh: true,
-        curPage: 1
+        curPage: 0
     };
-    var loading = '<div class="loading" style="text-align:center;">加载中...</div>';
+    var loading = '<div class="loading" style="text-align:center;padding:10px;">加载中...</div>';
+    var nomore = '<div class="t-c p10">没有更多数据了！</div>';
     // 获取信息
     function getInfo(obj, id, keyword){
-        if(infoObj.isLoading) return;
-        if(typeof obj !== 'undefined'){	
-            var self = $(obj);
+        var self = $(obj);
+        if(self.hasClass('act')) {
+            infoObj.curPage++;
+        } else {
             self.addClass('act').siblings().removeClass('act');
-        }
-        if(filter[id] !== keyword) {
             infoObj.refresh = true;
             infoObj.curPage = 1;
-        } else {
-            infoObj.curPage++;
+            infoObj.isEnd = false;
         }
+        if(infoObj.isLoading || infoObj.isEnd) return;
+      
         if(typeof keyword !== 'undefined'){
             filter[id] = keyword;	
         }else{
@@ -80,24 +81,31 @@
         }
         
         var param = {filter : filter};
-        // if(typeof page !== 'undefined'){
-        //     param['page'] = page;
-        //     param['page'] = page;
-        // }
         param['page'] = infoObj.curPage;
         
         infoObj.isLoading = true;
-        $('.m-lay').append(loading);
+        if(infoObj.refresh) {
+            $('#listContainer').html(loading);
+        } else {
+            $('#listContainer').append(loading);
+        }
         $.get('/xcap/getlist.php', param, function(res){
-            if(infoObj.refresh) {
-                infoObj.data = res;
-                infoObj.refresh = false;
-            } else {
-                combine(infoObj.data.list, res.list)
-            }
-            infoObj.isLoading = false;
-            $('.loading').remove();
-            render('list', 'listContainer');
+            setTimeout(() => {
+                if(infoObj.refresh) {
+                    infoObj.data = res;
+                    infoObj.refresh = false;
+                } else {
+                    combine(infoObj.data.list, res.list)
+                }
+                infoObj.isLoading = false;
+                $('.loading').remove();
+                render('list', 'listContainer');
+                if(res.list.length <= 0) {
+                    infoObj.isEnd = true;
+                    $('#listContainer').append(nomore);
+                } 
+            }, 1000);
+           
         }, 'json');
     }
    
@@ -117,7 +125,8 @@
         }, 'json');
     }
     $(function(){
-        getListAll();
+        getInfo($('.act'), 3);
+        // getListAll();
         // 上拉加载
         // var isLoading = false;
         $(window).scroll(function(e){
@@ -127,7 +136,7 @@
                 wH = $(window).height(),
                 btmH = 50;
                 if(doH - scrH -btmH - wH <= -50) {
-                    getInfo(null, 3, filter[3]);
+                    getInfo($('.act'), 3, filter[3]);
                 }
 
         })
@@ -144,4 +153,5 @@
         
         $('#'+container).html(html);
     }
+    console.log(infoObj)
 </script>

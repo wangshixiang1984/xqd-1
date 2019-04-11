@@ -15,9 +15,6 @@
     <div class="selmenu p10">
         <div class="tit sel mtb10"><?php echo $title; ?></div>
         <ul class="item">
-            <li class="act">
-                <a href="javascript:void(0)"><?php echo '9月' ?></a>
-            </li>
             <?php for($i=0; $i < count($menuList); $i++ ){ ?>
             <li>
                 <a href="javascript:void(0)"><?php echo $menuList[$i]['name']; ?></a>
