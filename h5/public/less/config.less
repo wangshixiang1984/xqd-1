@@ -1,0 +1,125 @@
+@charset 'utf-8';
+
+/*=============================================
+=            基础变量配置            =
+=============================================*/
+
+/* theme1 black background and white foreground   default style*/
+
+// 加载spinner 颜色
+@color-spinner: #666666;
+//禁用颜色
+@color-disabled: #ccc;
+//警告颜色
+@color-warning: #fd8000;
+//提示颜色
+@color-prompt: #ff0000;
+//成功颜色
+@color-success:#06c37e;
+//表单
+@table-color-border:#f2f2f2;
+@table-color-bg:#f2f2f2;
+//按扭颜色
+@btn-color-white:#fff;
+@btn-color-blue:#007aff;
+@btn-color-red:#dd524d;
+@btn-color-green:#4cd964;
+@btn-color-orange:#f0ad4e;
+@btn-color-purple:#8a6de9;
+@btn-color-gray:#ccc;
+//副文本颜色
+@color-text-f: #fff;
+@color-text-1: #111111;
+@color-text-3: #333333;
+@color-text-5: #555555;
+@color-text-6: #666666;
+@color-text-9: #999999;
+@color-text-c: #cccccc;
+//链接颜色
+@color-a-link1: @color-text-1;
+@color-a-link3: @color-text-3;
+@color-a-link5: @color-text-5;
+@color-a-link6: @color-text-6;
+@color-a-link9: @color-text-9;
+//body 背景色
+@theme-body-bg:#fff;
+
+/*主题*/
+@theme-color-bg: #2E8DED; //背景色
+@theme-color-text: #47a7ff; //文本色
+@theme-color-border: #f2f2f2; //边框本色
+@theme-title-Bg: #f2f2f2; //背景色
+
+
+/* 图片路径 */
+
+@imgPath: "../images/";
+
+/* 通用基础样式 */
+
+
+//导航图标
+.ps-navicon-1{
+    background: url("@{imgPath}index.svg") no-repeat;
+}
+.ps-navicon-1.active{
+    background: url("@{imgPath}index_active.svg") no-repeat;
+}
+.ps-navicon-2{
+    background: url("@{imgPath}category.svg") no-repeat;
+}
+.ps-navicon-2.active{
+    background: url("@{imgPath}category_active.svg") no-repeat;
+}
+.ps-navicon-3{
+    background: url("@{imgPath}cart.svg") no-repeat;
+}
+.ps-navicon-3.active{
+    background: url("@{imgPath}cart_active.svg") no-repeat;
+}
+
+//设置背景颜色
+.ps-navbg{
+    background: @theme-color-bg;
+}
+.ps-cartnav-bg{
+    background: #ffffff;
+}
+
+//设置常用文字颜色
+.ps-color-white{
+    color: #ffffff;
+}
+.ps-color-3{
+    color: #333333;
+}
+.ps-color-6{
+    color: #666666;
+}
+.ps-color-9{
+    color: #999999;
+}
+//常用背景颜色  此处可自行添加需要的颜色 
+.ps-bg-c{
+    background: #cccccc;
+}
+/*=====  End of 基础变量配置  ======*/
+
+
+/*=============================================
+=            基本单位设定            =
+=============================================*/
+
+//适配设置 100px = 1rem;
+@import 'pxrem100.less';
+//适配设置 10px = 1rem;
+// @import 'pxrem10.less';
+
+@rem1d2: (@rem7 + @rem5) / 10;
+@rem1d4: (@rem8 + @rem6) / 10;
+@rem1d5: @rem1 + @rem5 / 10;
+@rem1d6: (@rem8 * 2) / 10;
+@rem1d7: @rem1d2 + @rem5 / 10;
+@rem1d8: (@rem9 * 2) / 10;
+
+/*=====  End of 基本单位设定  ======*/

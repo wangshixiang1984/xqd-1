@@ -1,0 +1,21 @@
+.deansidebar{position:fixed;right:0px;top:40%;width:50px;height:200px;background:#137BBB;border-top-left-radius:5px;border-bottom-left-radius:5px;z-index:11111;}
+.deansidebar ul li{width:50px;height:50px;cursor:pointer;position:relative;}
+.deansidebar ul li:hover{background:#03283F;}
+.deansidebar ul li:hover .deanhidebox{display:block;transition:all 0.3s linear;}
+.deansidebar ul li em{display:block; padding:50px 0 0 50px;}
+.deansidebar ul li em.deanqqtb{background:url(/Theme/Simple/images/qq2.png) center no-repeat;}
+.deanhidebox{position:absolute;right:50px;top:-22px;width:280px;background:#fff;border:1px solid #dcd9d8;display:none;transition:all 0.3s linear;z-index:11111;border-radius:2px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);box-shadow:0 5px 10px rgba(0,0,0,0.2);}
+.deanhdbarrow{width:12px;height:27px;right:-12px;bottom:50px;position:absolute;background:url(/Theme/Simple/images/arrow2.png) center no-repeat;z-index:11111;}
+.deanhidebox h3{padding:8px 14px;font-size:14px;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-radius:1px 1px 0 0;}
+.deanhb_c{padding:9px 14px;}
+.deanhidebox p{margin:0 0 6px;font-size:12px;color:#666;}
+.deanhidebox p img{width:25px;height:25px;float:left;margin-right:10px;}
+.deanhidebox p span.deankf{display:block;float:left;line-height:26px;}
+.deanhb_c i{font-size:12px;color:#FF9D00;}
+.deansidebar ul li em.deanqqqun{background:url(/Theme/Simple/images/group2.png) center no-repeat;}
+.deansidebar ul li em.deanphone{background:url(/Theme/Simple/images/phone2.png) center no-repeat;}
+.deansidebar ul li em.deangz{background:url(/Theme/Simple/images/gz2.png) center no-repeat;}
+.deanqun{width:12px;height:27px;right:-12px;bottom:93px;position:absolute;background:url(/Theme/Simple/images/arrow2.png) center no-repeat;z-index:11111;}
+.deandhkf{width:12px;height:27px;right:-12px;bottom:90px;position:absolute;background:url(/Theme/Simple/images/arrow2.png) center no-repeat;z-index:11111;}
+.deangza{width:12px;height:27px;right:-12px;bottom:103px;position:absolute;background:url(/Theme/Simple/images/arrow2.png) center no-repeat;z-index:11111;}
+.deangQQ{bottom:150px;}

@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+/*课程管理*/
+body{font-size:14px;}
+a:link,a:visited{color:#555;}
+a:hover{text-decoration:underline;}
+table,tr,td{margin:0px; padding:5px; border-collapse:collapse;}
+td{border:solid 1px #ccc;}
+.admin_mhover tr:hover{background:#eee;}
+.admin_mhover img{width:50px; height:50px;}
+.admin_th{background:#eee; color:#000000;}
+.xcap_tag{width:400px; height:35px;}
+.xcap_tag tr td{background:#c01920; text-align:center;}
+.xcap_tag tr td a:link,.xcap_tag tr td a:visited{color:#fff; text-decoration:none;}
+#xcap_tag_now{background:#fff;}
+#xcap_tag_now a:link,#xcap_tag_now a:visited{color:#c01920;}
+/*翻页样式*/
+.next_page{width:100%; height:40px; margin-top:50px; text-align:center;}
+.next_page span{display:inline-block;width:60px; height:30px; background:#eee; border:solid 1px #ccc; padding:10px; margin:5px; cursor:pointer;}
+.next_page span:hover{background:#c01920; color:#fff;}
+.next_page span:hover a:link,.next_page span:hover a:visited{color:#fff;}
+.next_page span a:link,.next_page span a:visited{color:#000;}
+.next_page span a:hover{text-decoration:underline;}
+#current_page{background:#c01920; color:#fff;}
+#current_page a:link,#current_page a:visited{color:#fff;}
