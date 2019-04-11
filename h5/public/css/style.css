@@ -976,8 +976,8 @@ nav.menu.com .item > li{
 
 }
 .sp-wp .selmenu .item{
-    height: 0.4rem;
-    overflow: hidden;
+    /* height: 0.4rem; */
+    /* overflow: hidden; */
 }
 /* nav.menu.com .item li a:last-child{
     float: right;

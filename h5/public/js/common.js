@@ -29,3 +29,79 @@ $(function(){
     })
 
 })
+
+function Cdata(selector, url, options) {
+    //获取分类
+    this.filter = {};
+    this.url = url;
+    this.selector = selector;
+    this.page = 0;
+    this.infoObj = {
+        data:null,
+        isLoading: false,
+        isEnd: false,
+        refresh: true,
+        curPage: 0
+    };
+    this.loading = '<div class="loading t-c p10">加载中...</div>';
+    this.nomore = '<div class="t-c p10">没有更多数据了！</div>';
+    return this;
+}
+
+Cdata.prototype.getInfo = function(obj, id, keyword) {
+    var self = $(obj);
+    var _this = this;
+    if(self.hasClass('act') || typeof obj === 'undefined') {
+        this.infoObj.curPage++;
+    } else {
+        self.addClass('act').siblings().removeClass('act');
+        this.infoObj.refresh = true;
+        this.infoObj.curPage = 1;
+        this.infoObj.isEnd = false;
+    }
+    if(this.infoObj.isLoading || this.infoObj.isEnd) return;
+  
+    if(typeof keyword !== 'undefined'){
+        this.filter[id] = keyword;	
+    }else{
+        this.filter[id] = '';
+    }
+    
+    var param = {filter : _this.filter};
+    param['page'] = this.infoObj.curPage;
+    
+    this.infoObj.isLoading = true;
+    if(this.infoObj.refresh) {
+        $('#'+this.selector).html(this.loading);
+    } else {
+        $('#'+this.selector).append(this.loading);
+    }
+    $.get(this.url, param, function(res){
+        if(_this.infoObj.refresh) {
+            _this.infoObj.data = res;
+            _this.infoObj.refresh = false;
+        } else {
+            _this.combine(_this.infoObj.data.list, res.list)
+        }
+        _this.infoObj.isLoading = false;
+        $('.loading').remove();
+        _this.render('list', _this.selector);
+        if(res.list.length <= 0) {
+            _this.infoObj.isEnd = true;
+            $('#'+_this.selector).append(_this.nomore);
+        } 
+       
+    }, 'json');
+}
+//    数组合并
+Cdata.prototype.combine = function(arr1,arr2) {
+    for(i = 0; i < arr2.length; i++) {
+        arr1.push(arr2[i]);
+    }
+    return arr1;
+}
+Cdata.prototype.render =  function(id, container){
+    var _this = this;
+    var html = template(id, {data: _this.infoObj.data});
+    $('#'+container).html(html);
+}
