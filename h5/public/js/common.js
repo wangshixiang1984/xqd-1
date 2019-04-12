@@ -29,13 +29,17 @@ $(function(){
     })
 
 })
-
+// options  {callback, showText}
+// callback 执行完渲染后的回调
+// hideText 是否显示提示，没有更多数据
 function Cdata(selector, url, options) {
     //获取分类
     this.filter = {};
     this.url = url;
     this.selector = selector;
+    this.scriptId = 'list';
     this.page = 0;
+    this.opts = options || {};
     this.infoObj = {
         data:null,
         isLoading: false,
@@ -85,10 +89,10 @@ Cdata.prototype.getInfo = function(obj, id, keyword) {
         }
         _this.infoObj.isLoading = false;
         $('.loading').remove();
-        _this.render('list', _this.selector);
+        _this.render(_this.scriptId, _this.selector);
         if(res.list.length <= 0) {
             _this.infoObj.isEnd = true;
-            $('#'+_this.selector).append(_this.nomore);
+            !_this.opts.hideText && $('#'+_this.selector).append(_this.nomore);
         } 
        
     }, 'json');
@@ -104,4 +108,9 @@ Cdata.prototype.render =  function(id, container){
     var _this = this;
     var html = template(id, {data: _this.infoObj.data});
     $('#'+container).html(html);
+    typeof this.opts.callback === 'function' && this.opts.callback();
+}
+Cdata.prototype.setId = function(id) {
+    this.scriptId = id;
+    return this;
 }

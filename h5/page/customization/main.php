@@ -1,6 +1,5 @@
-<?php
 
-?>
+<script src="/h5/public/js/mui.js"></script>
 <div class="bg-w">
     <div class="com-adv">
         <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903284418.jpg" />

@@ -1,63 +1,54 @@
 <?php
+//广告
+$sql = 'select * from adver where type = 7 limit 0, 1';
+$adv =  $lg->select_arr1($sql);
 ?>
 <div class="">
     <div class="com-adv">
-        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903284418.jpg" />
+        <img src="<?php echo $imgDir.$adv['img_path'] ?>" />
     </div>
-    <div class="lde-wp p10">
-        <a href="detail.php?id=1" class="mod">
-            <div class="pic">
-                <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201904019625.jpg" />
-            </div>
-            <div class="tit">
-                <p>
-                    <span class="">龙哥</span>
-                    <span class="pl10">
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />
-                    </span>
-                </p>
-                <p class="mt10">主带线路：主带线路:西藏地区 东南亚国家 青海 甘肃 云南等</p>
-            </div>
-        </a>
-        <a href="#" class="mod">
-            <div class="pic">
-                <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201801315126.jpg" />
-            </div>
-            <div class="tit">
-                <p>
-                    <span class="">龙哥</span>
-                    <span class="pl10">
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />
-                    </span>
-                </p>
-                <p class="mt10">主带线路：主带线路:西藏地区 东南亚国家 青海 甘肃 云南等</p>
-            </div>
-        </a>
-        <a href="#" class="mod">
-            <div class="pic">
-                <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201712126727.png" />
-            </div>
-            <div class="tit">
-                <p>
-                    <span class="">龙哥</span>
-                    <span class="pl10">
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
-                        <img src="/Theme/Simple/images/star.png" />
-                    </span>
-                </p>
-                <p class="mt10">主带线路：主带线路:西藏地区 东南亚国家 青海 甘肃 云南等</p>
-            </div>
-        </a>
+    <div class="lde-wp p10" id="container">
+    
+        
     </div>
 </div>
+
+<script id="list" type="text/html">
+    {{each data.list data index}}
+        <a href="./detail.php?id={{data.id}}" class="mod">
+            <div class="pic">
+                <img src="<?php echo $imgDir?>{{data.img_path}}" />
+            </div>
+            <div class="tit">
+                <p>
+                    <span class="">{{data.name}}</span>
+                    <span class="pl10">
+                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
+                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
+                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
+                        <img src="/Theme/Simple/images/star.png" />&nbsp;&nbsp;
+                        <img src="/Theme/Simple/images/star.png" />
+                    </span>
+                </p>
+                <p class="mt10">{{data.area}}</p>
+            </div>
+        </a>
+    {{/each}}
+</script>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        var cdata = new Cdata('container', './getlist.php');
+        cdata.getInfo();
+        $(window).scroll(function(e){
+            var doH = $(document).height(),
+                scrH = $(document).scrollTop(),
+                wH = $(window).height(),
+                btmH = 50;
+                if(doH - scrH -btmH - wH <= -50) {
+                    cdata.getInfo();
+                }
+        })
+    });
+</script>

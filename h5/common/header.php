@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="/h5/public/css/style.css">
     <script src="/h5/public/js/jquery.min.js"></script>
     <script src="/h5/public/js/common.js"></script>
-    <script src="/h5/public/js/mui.js"></script>
-    <script src='/js/template-web.js'></script>
 </head>
 <body>
 <?php

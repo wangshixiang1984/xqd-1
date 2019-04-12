@@ -65,7 +65,7 @@ if(!isset($_SESSION[USER])){
 				if(!is_dir(PATH_IMG.'video/')){
 					mkdir(PATH_IMG.'video/');
 				}
-				$namepic=PATH_IMG.'video/'.$namefile;	
+				$namepic='/htmleditor/attached/image/mainpic/video/'.$namefile;	
 			}
 			if(move_uploaded_file($_FILES[$fileElementName]['tmp_name'], $namepic)){
 				$msg=$namepic;

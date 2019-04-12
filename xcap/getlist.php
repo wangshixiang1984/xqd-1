@@ -11,7 +11,7 @@ $pageSize = 5;
 $sql = "select xcap.title, xcap.passed, xcap.id, xcap.img_path, xcap.gotheme, xcap.startplace, xcap.goday, xcap.gocity, xcdate.price, xcdate.gomonth, xcdate.godate, xcdate.minprice from xcap left join xcdate on xcdate.xcapid=xcap.id";
 $sql_str = '';
 if(empty($filter)){
-	
+	exit(json_decode(['status' => 'err', code => -1]));
 }else{
 	foreach($filter as $id => $keyword){
 		//按主题

@@ -1,8 +1,7 @@
 <?php
 include_once '../../common/header.php';
-$id = empty($_GET['id']) ? intval($_GET['id']) : 0;
+$id = !empty($_GET['id']) ? intval($_GET['id']) : 0;
 $info = $lg->select_arr1("select * from ld where id='$id'");
-
 ?>
     <div class="ld-con p10">
         <p class="tit">达人详情</p>
@@ -14,9 +13,10 @@ $info = $lg->select_arr1("select * from ld where id='$id'");
             <?php 
                 $sql = "select title, id from xcap where id in(".trim($info['leadedxl'], ',').")";
                 $list = $lg->select_arr2($sql);
+                
                 for($i=0;$i<count($list);$i++){
             ?>
-            <li><a href="/xcap/detail.php?id=<?php echo $list[$i]['id']; ?>"><?php echo $list[$i]['title']; ?></a></li>
+            <li><a href="/h5/page/detail/index.php?id=<?php echo $list[$i]['id']; ?>"><?php echo $list[$i]['title']; ?></a></li>
             <?php } ?>
         </ul>
     </div>

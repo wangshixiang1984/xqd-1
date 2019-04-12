@@ -20,6 +20,7 @@
         <div class="t-c" >微信公众号</div>
     </div>
 </footer>
+<script src='/js/template-web.js'></script>
 </div>
 </body>
 </html>

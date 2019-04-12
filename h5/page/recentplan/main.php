@@ -35,11 +35,6 @@
     $(function(){
         var cdata = new Cdata('container', './getRecent.php');
         cdata.getInfo();
-        // $('#dstion li').click(function(){
-        //     var city = $(this).data('city');
-        //     cdata.getInfo($(this), 3, city);
-        // })
-      
         $(window).scroll(function(e){
             var doH = $(document).height(),
                 scrH = $(document).scrollTop(),

@@ -25,7 +25,7 @@
     </div>
 </div>
 <script id="list" type="text/html">
-        {{each data.list data index}}
+    {{each data.list data index}}
         <a href="<?php echo $rootLink.'detail/index.php?id='; ?>{{data.id}}" class="row mt10 yj brd-btm">
             <div class="m-mod">
                 <div class="m-item">
@@ -40,7 +40,7 @@
                 <p>费用：{{if data.gotheme == "AA制自驾"}}AA{{else}}{{if data.passed == 1}}0{{else}}<span class="price f16">{{data.minprice}}</span>{{/if}} 元 / 起{{/if}}<span class="price f16">7900.00</span>元/起</p>
             </div>
         </a>
-        {{/each}}
+    {{/each}}
 
 </script>
 <script type="text/javascript" charset="utf-8">

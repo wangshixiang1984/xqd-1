@@ -8,4 +8,5 @@ define("FIELDPSW" ,"userpsw");
 define("ADMIN_USER_NAME","xqdzjy");
 define("PATH_IMG","../../htmleditor/attached/image/mainpic/");
 define('IMG_DIR', '/htmleditor/attached/image/mainpic/');
+define('PAGESIZE', 5);
 ?>

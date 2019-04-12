@@ -1297,6 +1297,7 @@ nav.menu.com .item > li{
 }
 .lde-wp .tit > p{
     line-height: 0.2rem;
+    color: #fff;
 }
 .lde-wp .tit img{
     width: 0.15rem;
@@ -1606,4 +1607,9 @@ nav.menu.com .item > li{
     text-align: center;
     padding: 10px;
     color: #666;
+}
+/* 广告 */
+.com-adv{
+    max-height: 220px;
+    overflow: hidden;
 }
