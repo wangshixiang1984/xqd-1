@@ -148,7 +148,7 @@ function ajaxPicUpload()
 		<td>
 			<div class="zy_media" style="width: 200px; height: 150px;">
 			<video  data-config='{"mediaTitle": "<?php echo $video_arr[$i]["name"]?>"}'>
-        	<source src="<?php echo PATH_IMG."video/".$video_arr[$i]['lurl'] ?>" type="video/mp4">
+        	<source src="<?php echo "/htmleditor/attached/video/".$video_arr[$i]['lurl'] ?>" type="video/mp4">
       	  	您的浏览器不支持HTML5视频
    	 		</video></div></td>
 		<td style="width:30%"> 

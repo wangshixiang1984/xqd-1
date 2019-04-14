@@ -62,11 +62,11 @@ if(!isset($_SESSION[USER])){
 			if($type === 'pic') {
 				$namepic=PATH_IMG.$namefile;	
 			} else {
-				if(!is_dir(PATH_IMG.'video/')){
-					mkdir(PATH_IMG.'video/');
+				if(!is_dir($_SERVER['DOCUMENT_ROOT'].'/htmleditor/attached/video/')){
+					mkdir($_SERVER['DOCUMENT_ROOT'].'/htmleditor/attached/video/');
 				}
 				
-				$namepic=$_SERVER['DOCUMENT_ROOT'].'/htmleditor/attached/image/mainpic/video/'.$namefile;	
+				$namepic=$_SERVER['DOCUMENT_ROOT'].'/htmleditor/attached/video/'.$namefile;	
 			}
 			if(move_uploaded_file($_FILES[$fileElementName]['tmp_name'], $namepic)){
 				$msg=$namepic;

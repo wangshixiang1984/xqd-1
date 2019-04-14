@@ -55,6 +55,8 @@ function Cdata(selector, url, options) {
 Cdata.prototype.getInfo = function(obj, id, keyword) {
     var self = $(obj);
     var _this = this;
+    
+    if(this.infoObj.isLoading || this.infoObj.isEnd) return;
     if(self.hasClass('act') || typeof obj === 'undefined') {
         this.infoObj.curPage++;
     } else {
@@ -63,8 +65,6 @@ Cdata.prototype.getInfo = function(obj, id, keyword) {
         this.infoObj.curPage = 1;
         this.infoObj.isEnd = false;
     }
-    if(this.infoObj.isLoading || this.infoObj.isEnd) return;
-  
     if(typeof keyword !== 'undefined'){
         this.filter[id] = keyword;	
     }else{

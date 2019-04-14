@@ -142,12 +142,12 @@
                     <img src="<?php echo $imgDir;?>{{data.img_path}}" />
                 </a>
             </div>
-            <div class="m-mod">
+            <a href="/h5/page/strategy/detail.php?id={{data.id}}" class="m-mod">
                 <p class="f14 f-bold t-c fone-ellipsis">{{@data.title}}</p>
                 <p class="f12 des f4-ellipsis">
                     {{@data.des}}    
                 </p>
-            </div>
+            </a>
         </div>
     {{/each}}
 </script>
@@ -217,14 +217,14 @@
         })();
         // 近期行程
         (function(){
-            var cdata3 = new Cdata('recentplace', './page/recentplan/getRecent.php',{
+            var cdata3 = new Cdata('recentplace', './page/recentplan/getRecent.php?size=10',{
                 hideText: true,
             });
             cdata3.setId('recent').getInfo();
         })();
         // 攻略
         (function(){
-            var cdata4 = new Cdata('strategy', './page/strategy/getList.php',{
+            var cdata4 = new Cdata('strategy', './page/strategy/getList.php?size=10',{
                 hideText: true,
             });
             cdata4.setId('stra').getInfo();

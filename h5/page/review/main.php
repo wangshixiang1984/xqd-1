@@ -31,7 +31,7 @@
         <div class="con mt10 clr-all f12 brd-btm pb10">
             <video id='my-video' class='video-js' controls preload='auto' width='100%' height='150'
             poster='/htmleditor/attached/image/mainpic/{{data.pic}}' data-setup='{}'>
-                <source src='/htmleditor/attached/image/mainpic/video/{{data.lurl}}' type='video/mp4'>
+                <source src='/htmleditor/attached/video/{{data.lurl}}' type='video/mp4'>
                 <p class='vjs-no-js'>
                     浏览器版本太低,不支持HTML5视频,请升级！
                 </p>
