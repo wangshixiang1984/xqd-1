@@ -127,7 +127,7 @@ if(!isset($_SESSION[USER])){
 		<td><input type="button" name="add_adver" value="添加广告" onclick="window.location.href='add_adver.php?type=2';"/></td></tr>
 		
 		<tr>
-			<td>首页单版广告</td>
+			<td>近期行程</td>
 			<td>
 			
 				<table><tr>
@@ -150,7 +150,7 @@ if(!isset($_SESSION[USER])){
 			<td><input type="button" value="添加广告" name="add_indexAdver" onclick="window.location.href='add_adver.php?type=3';" /></td>
 		</tr>	
 		<tr>
-			<td>自驾攻略</td>
+			<td>自驾攻略/精彩回顾</td>
 			<td>
 			
 				<table><tr>

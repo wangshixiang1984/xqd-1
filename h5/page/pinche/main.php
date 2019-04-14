@@ -1,24 +1,11 @@
 <?php
-    $place = isset($_GET['city']) ? $lg->ckinput($_GET['city']) : '';
-    $sql = 'select distinct(gocity) from xcap where gocity !=""';
-    $menuList = $lg->select_arr2($sql);
+    // $place = isset($_GET['city']) ? $lg->ckinput($_GET['city']) : '';
+    // $sql = 'select distinct(gocity) from xcap where gocity !=""';
+    // $menuList = $lg->select_arr2($sql);
     // print_r($menuList);
-    $title = '选择目的地';    
+    // $title = '选择目的地';    
 ?>
 <div class="sp-wp">
-    <div class="selmenu p10">
-        <div class="tit sel mtb10"><?php echo $title; ?></div>
-        <ul class="item" id="dstion">
-            <li class="<?php echo $place ? "" : "act" ?>">
-                <a href="javascript:void(0)"><?php echo '全部' ?></a>
-            </li>
-            <?php for($i=0; $i < count($menuList); $i++ ){ ?>
-            <li data-city= '<?php echo $menuList[$i]['gocity'];?>' class="<?php echo $place === $menuList[$i]['gocity'] ? 'act': ''; ?>">
-                <a href="javascript:void(0)"><?php echo $menuList[$i]['gocity']; ?></a>
-            </li>
-            <?php } ?>
-        </ul>
-    </div>
     <div class="m-lay mt10 bg-w scroll1">
         <div class="con mt10 clr-all" id="listContainer">
        
@@ -46,27 +33,15 @@
 </script>
 <script type="text/javascript" charset="utf-8">
     $(function(){
-        var cdata = new Cdata('listContainer', '/xcap/getlist.php');
-        var search = window.location.search;
-        var curMs = search.substring(1, search.length).split('=');
-        var curM;
-        if(curMs[0] === 'city') {
-            curM = decodeURIComponent(curMs[1]);
-        }
-        curMon = curM || "";
-        cdata.getInfo($('.act'), 3, curMon);
-        $('#dstion li').click(function(){
-            var city = $(this).data('city');
-            cdata.getInfo($(this), 3, city);
-        })
-      
+        var cdata = new Cdata('listContainer', 'getlist.php');
+            cdata.getInfo();
         $(window).scroll(function(e){
             var doH = $(document).height(),
                 scrH = $(document).scrollTop(),
                 wH = $(window).height(),
                 btmH = 50;
                 if(doH - scrH -btmH - wH <= -50) {
-                    cdata.getInfo($('.act'), 3, cdata.filter[3]);
+                    cdata.getInfo();
                 }
         })
     });

@@ -26,6 +26,7 @@ if(!isset($_SESSION[USER])){
 		$adver_name=$_POST["picfile"];
 		$adver_type=$_POST["adver_type"];
 		//如果是首页广告，则生成缩略图
+		$adver_imglittle = '';
 		if($adver_type==0){		
 			$img=PATH_IMG.$adver_name;		
 			$adver_imglittle=$resizeimg->resizeimg($img,50,50,1,PATH_IMG);
@@ -110,7 +111,7 @@ function ajaxFileUpload()
 				<option <?php echo $arr_type[4];?> value="4">首页移动端广告</option>
 				<option <?php echo $arr_type[1];?> value="1">自驾线路</option>
 				<option <?php echo $arr_type[2];?> value="2">游记攻略</option>
-				<option <?php echo $arr_type[3];?> value="3">首页单版广告</option>
+				<option <?php echo $arr_type[3];?> value="3">近期行程</option>
 				<option <?php echo $arr_type[5];?> value="5">自驾攻略</option>
 				<option <?php echo $arr_type[6];?> value="6">线路定制</option>
 				<option <?php echo $arr_type[7];?> value="7">团队</option>

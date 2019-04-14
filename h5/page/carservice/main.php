@@ -36,7 +36,7 @@
                 <p>配置： {{data.peizhi}}</p>
                 <p>可乘人数：{{data.peopleseat}}人</p>
                 <p>价格：RMB {{data.price}}起/天</p>
-                <p class="mt5"><a href="./detail.php?id=1"><button class="btn btn-solid">查看详情</button></a></p>
+                <p class="mt5"><a href="./detail.php?id={{data.id}}"><button class="btn btn-solid">查看详情</button></a></p>
             </div>
         </div>
     {{/each}}

@@ -56,21 +56,21 @@
     </div>
     <div class="con mt10 clr-all">
         <ul class="month mt10">
-            <li><a href="#"><img src="./public/images/m1.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m2.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m3.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m4.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m5.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m6.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=1"><img src="./public/images/m1.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=2"><img src="./public/images/m2.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=3"><img src="./public/images/m3.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=4"><img src="./public/images/m4.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=5"><img src="./public/images/m5.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=6"><img src="./public/images/m6.png" /></a></li>
            
         </ul>
         <ul class="month mt10">
-            <li><a href="#"><img src="./public/images/m7.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m8.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m9.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m10.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m11.png" /></a></li>
-            <li><a href="#"><img src="./public/images/m12.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=7"><img src="./public/images/m7.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=8"><img src="./public/images/m8.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=9"><img src="./public/images/m9.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=10"><img src="./public/images/m10.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=11"><img src="./public/images/m11.png" /></a></li>
+            <li><a href="/h5/page/time/index.php?mon=12"><img src="./public/images/m12.png" /></a></li>
         </ul>
     </div>
 </div>
@@ -157,9 +157,9 @@
         <div class="fl"><i></i><div class="tpic"><img src="./public/images/at.png" /></div></div>
     </div>
     <div class="con mt10 clr-all">
-        <a href="#">
-            <div class="lpic"><img src="<?php echo $imgDir;?>{{data.img_path}}" /></div>
-            <p class='tit t-l f14 f-bold f3-ellipsis mt5'>{{@data.list.des}}</p>
+        <a href="/h5/page/about/">
+            <div class="lpic"><img src="<?php echo $imgDir;?>{{data.list.pic}}" /></div>
+            <p class='tit t-l f14 f-bold f3-ellipsis mt5'>{{@data.list.title}}</p>
         </a>
     </div>
 </script>

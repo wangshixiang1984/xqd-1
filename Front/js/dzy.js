@@ -30,7 +30,7 @@ $(document).ready(function(e) {
 	
 	$("#notarget").click(function(){
 		if($(this).prop('checked')){
-		 $("#dest").val("没有确定的目的地，请趣自驾帮我安排")
+		 $("#dest").val("没有确定的目的地，请帮我安排")
 		}
 		else{
 		 $("#dest").val("");	

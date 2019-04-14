@@ -1,6 +1,10 @@
+<?php
+  $sql_a = "select * from adver where type=5 order by id desc limit 0, 1";
+  $adv = $lg->select_arr1($sql_a);
+?>
 <div class="sp-wp">
     <div class="com-adv">
-        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903267058.jpg" />
+        <img src="<?php echo $imgDir.$adv['img_path'];?>" alt="<?php echo $adv['title'];?>" />
     </div>
     <div class="m-lay us mt10 bg-w" id="container">
         

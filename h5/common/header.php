@@ -24,8 +24,8 @@
     <div class="sc-wp">
         <form action="javascript:void(0)" method="POST">
             <i class="iconfont iconlocation l"></i>
-            <div class="input"><input type="search" placeholder="目的地" /></div>
-            <i class="iconfont iconico_search r"></i>
+            <div class="input"><input type="search" id="serachBox" placeholder="目的地" /></div>
+            <i class="iconfont iconico_search r" id="searchBtn"></i>
         </form>
     </div>
     <div class="t-c hw">
@@ -36,7 +36,7 @@
             <div>搜索</div>
         </div>
 
-        <a href="/" class="icon logo">
+        <a href="/h5" class="icon logo">
             <img src="/h5/public/images/logo.png" />
         </a>
 
@@ -70,15 +70,21 @@
         </li>
         <li>
             <a href="/h5/page/recentplan/"><i class="mr10 iconfont iconshehuade"></i><span>近期行程</span></a>
-            <a href="/h5/page/team/"><i class="mr10 iconfont icontuandui"></i><span>团队展示</span></a>
+            <a href="/h5/page/pinche/"><i class="mr10 iconfont iconyuding"></i><span>拼车自驾</span></a>
         </li>
         <li>
             <a href="/h5/page/customization/"><i class="mr10 iconfont iconyuding"></i><span>行程定制</span></a>
-            <a href="/h5/page/about/"><i class="mr10 iconfont icongaoduande"></i><span>关于心启点</span></a>
+            <a href="/h5/page/team/"><i class="mr10 iconfont icontuandui"></i><span>团队展示</span></a>
         </li>
         <li>
-            <!-- <a href="../about.php"><i class="mr10 iconfont iconmudedi"></i><span>关于心启点</span></a> -->
+            <a href="/h5/page/about/"><i class="mr10 iconfont icongaoduande"></i><span>关于心启点</span></a>
         </li>
         
     </ul>
 </nav>
+<script>
+$('#searchBtn').click(function(){
+    var keyword = $.trim($('#serachBox').val());
+    window.location.href= "/h5/page/search/index.php?keyword="+keyword;
+})
+</script>

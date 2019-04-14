@@ -1,232 +1,79 @@
-<?php
-    $menuList = [
-        ['name'=> '1月','src' => './index.php'],
-        ['name'=> '2月','src' => './index.php'],
-        ['name'=> '3月','src' => './index.php'],
-        ['name'=> '4月','src' => './index.php'],
-        ['name'=> '5月','src' => './index.php'],
-        // ['name'=> '6月','src' => './index.php'],
-        // ['name'=> '7月','src' => './index.php'],
-        // ['name'=> '8月','src' => './index.php']
-    ];
-    $title = '选择月份';
-?>
-<div class="sp-wp more">
-    <div class="selmenu p10">
-        <div class="tit sel mtb10"><?php echo '选择主题'; ?></div>
-        <ul class="item">
-            <li class="act">
-                <a href="javascript:void(0)"><?php echo '9月' ?></a>
-            </li>
-            <?php for($i=0; $i < count($menuList); $i++ ){ ?>
-                <li>
-                    <a href="javascript:void(0)"><?php echo $menuList[$i]['name']; ?></a>
-                </li>
-                <?php } ?>
-                <li>
-                    <a href="javascript:void(0)"><?php echo '更多' ?></a>
-                </li>
-            </ul>
-        <div class="tit sel mtb10"><?php echo $title; ?></div>
-        <ul class="item">
-            <li class="act">
-                <a href="javascript:void(0)"><?php echo '9月' ?></a>
-            </li>
-            <?php for($i=0; $i < count($menuList); $i++ ){ ?>
+<div class="sp-wp">
+    <!-- <div class="selmenu p10">
+        <div class="tit sel mtb10"><?php echo '主题'; ?></div>
+        <ul class="item more">
+            <?php for($i=0; $i < count($themes); $i++ ){ ?>
             <li>
-                <a href="javascript:void(0)"><?php echo $menuList[$i]['name']; ?></a>
+                <a href="javascript:void(0)"><?php echo $themes[$i]['gotheme']; ?></a>
             </li>
             <?php } ?>
-            <li>
-                <a href="javascript:void(0)"><?php echo '更多' ?></a>
-            </li>
+            <div class="more">更多<i class="iconfont iconxiala"></i></div>
         </ul>
-        <div class="tit sel mtb10"><?php echo '选择地区'; ?></div>
-        <ul class="item">
-            <li class="act">
-                <a href="javascript:void(0)"><?php echo '9月' ?></a>
-            </li>
-            <?php for($i=0; $i < count($menuList); $i++ ){ ?>
+        <div class="tit sel mtb10"><?php echo '地区'; ?></div>
+        <ul class="item more">
+            <?php for($i=0; $i < count($areas); $i++ ){ ?>
             <li>
-                <a href="javascript:void(0)"><?php echo $menuList[$i]['name']; ?></a>
+                <a href="javascript:void(0)"><?php echo $areas[$i]['gocity']; ?></a>
             </li>
             <?php } ?>
-            <li>
-                    <a href="javascript:void(0)"><?php echo '更多' ?></a>
-                </li>
+            <div class="more">更多<i class="iconfont iconxiala"></i></div>
         </ul>
-        <div class="tit sel mtb10"><?php echo '选择行程'; ?></div>
-        <ul class="item">
-            <li class="act">
-                <a href="javascript:void(0)"><?php echo '9月' ?></a>
-            </li>
-            <?php for($i=0; $i < count($menuList); $i++ ){ ?>
+        <div class="tit sel mtb10"><?php echo '行程'; ?></div>
+        <ul class="item more">
+            <?php for($i=0; $i < count($xcs); $i++ ){ ?>
             <li>
-                <a href="javascript:void(0)"><?php echo $menuList[$i]['name']; ?></a>
+                <a href="javascript:void(0)"><?php echo $xcs[$i]; ?></a>
             </li>
             <?php } ?>
-            <li>
-                    <a href="javascript:void(0)"><?php echo '更多' ?></a>
-                </li>
+            <div class="more">更多<i class="iconfont iconxiala"></i></div>
         </ul>
-    </div>
+        <div class="tit sel mtb10"><?php echo '月份'; ?></div>
+        <ul class="item more">
+            <?php for($i=0; $i < count($months); $i++ ){ ?>
+            <li>
+                <a href="javascript:void(0)"><?php echo $months[$i]; ?></a>
+            </li>
+            <?php } ?>
+            <div class="more">更多<i class="iconfont iconxiala"></i></div>
+        </ul>
+    </div> -->
     <div class="m-lay mt10 bg-w">
-        <div class="con mt10 clr-all">
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201803131890.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201803131890.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-            <a href="#" class="row mt10 yj brd-btm">
-                <div class="m-mod">
-                    <div class="m-item">
-                        <img src="http://www.xqdzjy.com/htmleditor/attached/image/mainpic/201903188258.jpg" />
-                    </div>
-                </div>
-                <div class="m-mod f12">
-                    <p class="f14 f-bold fone-ellipsis">海螺沟冰川3日自驾游</p>
-                    <p>行程天数：13天</p>
-                    <p>出发地：成都</p>
-                    <p>行程日期：2019-05-25</p>
-                    <p>费用：<span class="price f16">7900.00</span>元/起</p>
-                </div>
-            </a>
-           
+        <div class="con mt10 clr-all" id="container">
+            
         </div>
     </div>
 </div>
+<script id="list" type="text/html">
+        {{each data.list data index}}
+        <a href="<?php echo $rootLink.'detail/index.php?id='; ?>{{data.id}}" class="row mt10 yj brd-btm">
+            <div class="m-mod">
+                <div class="m-item">
+                    <img src="<?php echo $imgDir?>{{data.img_path}}" />
+                </div>
+            </div>
+            <div class="m-mod f12">
+                <p class="f14 f-bold fone-ellipsis">{{@data.title}}</p>
+                <p>行程天数：{{data.goday}}天</p>
+                <p>出发地：{{data.startplace}}</p>
+                <p>行程日期：:{{if data.passed == 1}}已封团{{else}}{{data.godate}}{{/if}}</p>
+                <p>费用：{{if data.gotheme == "AA制自驾"}}AA{{else}}{{if data.passed == 1}}0{{else}}<span class="price f16">{{data.minprice}}</span>{{/if}} 元 / 起{{/if}}<span class="price f16">7900.00</span>元/起</p>
+            </div>
+        </a>
+        {{/each}}
+
+</script>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        var cdata = new Cdata('container', './getList.php');
+        cdata.getInfo();
+        $(window).scroll(function(e){
+            var doH = $(document).height(),
+                scrH = $(document).scrollTop(),
+                wH = $(window).height(),
+                btmH = 50;
+                if(doH - scrH -btmH - wH <= -50) {
+                    cdata.getInfo();
+                }
+        })
+    });
+</script>

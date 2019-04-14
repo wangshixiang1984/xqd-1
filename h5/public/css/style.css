@@ -975,10 +975,20 @@ nav.menu.com .item > li{
     color: #2f78a3 !important;
 
 }
-.sp-wp .selmenu .item{
-    /* height: 0.4rem; */
-    /* overflow: hidden; */
+
+.sp-wp .selmenu .item.more{
+    overflow: hidden;
+    position: relative;
+    padding-right: 0.4rem;
+    height: 0.4rem;
+    /* height: auto; */
 }
+
+.sp-wp .selmenu .item .more{
+    position: absolute;
+    right: 0.05rem;
+}
+
 /* nav.menu.com .item li a:last-child{
     float: right;
 } */
@@ -1435,35 +1445,41 @@ nav.menu.com .item > li{
 .dt-head h1{
     font-size: 0.16rem;
     padding: 0.1rem;
-    text-align: center;
+    /* text-align: center; */
 }
 .dt-head .lm{
     color: #fff;
-    width: 45%;
-    background: -webkit-linear-gradient(top,#3f76b0, #90c2f7); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(bottom,#3f76b0, #90c2f7); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(bottom,#3f76b0, #90c2f7); /* Firefox 3.6 - 15 */
-    background: linear-gradient(to bottom,#3f76b0, #90c2f7);
+    /* width: 45%; */
+    /* background: -webkit-linear-gradient(top,#3f76b0, #90c2f7); 
+    background: -o-linear-gradient(bottom,#3f76b0, #90c2f7); 
+    background: -moz-linear-gradient(bottom,#3f76b0, #90c2f7); 
+    background: linear-gradient(to bottom,#3f76b0, #90c2f7); */
+}
+.dt-head .des{
+    height: 0.54rem;
+    overflow: hidden;
 }
 .dt-head .lm li{
     padding: 0.08rem 0.05rem;
     border-bottom: 1px solid #fff;
     position: relative;
 }
-.dt-head .lm li .lis{
-    position: absolute;
+.dt-head .lm .lis{
+    /* max-height: 1.2rem;
+    overflow: auto; */
+    position: relative;
     width: 100%;
     left: 0;
-    /* bottom: 0; */
-    top: 0.35rem;
+    /* top: 0.85rem; */
     z-index: 10;
-    background-color: #fff;
+    background-color: #f6f6f6;
     border: 1px solid #eee;
     display: none;
+    margin-top: 0.1rem;
 }
-.dt-head .lm li .lis > p{
+.dt-head .lm .lis > p{
     border-bottom: 1px solid #eee;
-    padding: 0.02rem;
+    padding: 0.05rem;
     font-size: 0.12rem;
 }
 .dt-head .lm li i{
@@ -1474,11 +1490,57 @@ nav.menu.com .item > li{
     max-height: 2.3rem;
     overflow: hidden;
 }
+.dt-head .tag{
+    padding: 0.1rem;
+}
+.dt-head .tag li{
+    border: 1px solid #cdb568;
+    border-radius: 5px;
+    padding: 0.02rem 0.08rem;
+    color: #cdb568;
+    font-size: 0.12rem;
+    margin: 0 0.05rem;
+    display: inline-block;
+}
+.dt-mwrap{
+    position: relative;
+    margin-top: 0.1rem;
+}
+.dt-mwrap .row-lr .col-l,
+.dt-mwrap .row-lr .col-r{
+    width: calc(50% - 5px);
+    color: #333;
+}
+.dt-mwrap .row-lr > div > div{
+    border-bottom: 1px solid #333;
+    padding: 0.1rem 0;
+}
+.dt-mwrap .row-lr > div > div i{
+    color: #daca97;
+    margin-right: 0.05rem;
+}
+.dt-btn .col-l,
+.dt-btn .col-r{
+    font-size: 0.12rem;
+    background-color: #6bb0f8;
+    color: #fff;
+    width: 40%;
+    text-align: center;
+    padding: 0.1rem;
+}
+.dt-btn .col-r{
+    background-color: #3b92ed;
+    width: 60%;
+}
 .xc-wp .tit{
     font-size: 0.16rem;
     border-left: 4px solid #90c2f7;
     padding: 0.05rem 0 0.05rem 0.15rem;
     font-weight: bold;
+}
+.xc-wp .h60{
+    height: 0.6rem;
+    overflow: hidden;
 }
 /* .xc-wp .des{
     height: 0.6rem;
@@ -1516,6 +1578,7 @@ nav.menu.com .item > li{
     padding: 0.1rem;
     background-color: #f4faff;
     padding-bottom: 0.3rem;
+    font-size: 0.12rem !important;
 }
 .dt-fy.sx .con{
     background-color: #fdfaff;
@@ -1613,3 +1676,27 @@ nav.menu.com .item > li{
     max-height: 220px;
     overflow: hidden;
 }
+
+/* 攻略详情 */
+.strage-wp{
+
+}
+.strage-wp h1{
+    font-size: 0.16rem;
+    /* text-align: center; */
+    padding: 0.1rem;
+}
+.strage-wp .con{
+    font-size: 0.12rem !important;
+    line-height: 0.24rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #eee;
+}
+.strage-xg h3{
+    padding: 0.05rem 0;
+}
+.strage-xg p{
+    margin: 0.05rem 0;
+}
+
+

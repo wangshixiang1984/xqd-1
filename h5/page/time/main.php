@@ -1,19 +1,22 @@
 <?php
-   $m = date('n');
-   $month = array_merge( range(1, $m -1), range($m, 12));
+    $curM = isset($_GET['mon']) ? intval($_GET['mon']) : '';
+    $m = date('n');
+    $month = array_merge( range(1, $m -1), range($m, 12));
 //    print_r($month);
-   $months = array_map(function($val){
-       return $val.'月';
-   }, $month);
+    $months = array_map(function($val){
+        return $val.'月';
+    }, $month);
 
     $title = '选择出行月份';
+    $curMon = $curM ? $curM.'月' : $m.'月';
 ?>
 <div class="sp-wp">
     <div class="selmenu p10">
         <div class="tit sel mtb10"><?php echo $title; ?></div>
         <ul class="item" id="dstion">
-            <?php for($i=0; $i < count($months); $i++ ){ ?>
-            <li data-month="<?php echo $months[$i]; ?>" class="<?php echo $m.'月' == $months[$i] ? 'act' : '';?>" >
+            <?php for($i=0; $i < count($months); $i++ ){ 
+                ?>
+            <li data-month="<?php echo $months[$i]; ?>" class="<?php echo $curMon == $months[$i] ? 'act' : '';?>" >
                 <a href="javascript:void(0)"><?php echo $months[$i]; ?></a>
             </li>
             <?php } ?>
@@ -48,6 +51,14 @@
     $(function(){
         var cdata = new Cdata('container', '/xcap/getlist.php');
         var curMon = new Date().getMonth()+1;
+        var search = window.location.search;
+        var curMs = search.substring(1, search.length).split('=');
+        var curM;
+        if(curMs[0] === 'mon') {
+            curM = curMs[1];
+        }
+        curMon = curM || curMon;
+        console.log(curMon)
         cdata.getInfo($('.act'), 5, curMon+'月');
         $('#dstion li').click(function(){
             var mon = $(this).data('month');

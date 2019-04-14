@@ -145,10 +145,10 @@ private function chekcode($strcode){
 	for($i=0;$i<5;$i++){
 		imageline($img,rand(0,80),rand(0,30),rand(0,80),rand(0,30),$l_color);
 	}
-	
+	$font = dirname(__FILE__).'/STSONG.TTF';
 	for($i=0;$i<iconv_strlen($strcode);$i++){
 		$str=iconv_substr($strcode,$i,1,"utf-8");
-		imagettftext($img, 14, rand(-5,5), 8+14*$i,13+$i*rand(0,2), $charcolor,"STSONG.TTF", $str);
+		imagettftext($img, 14, rand(-5,5), 8+14*$i,13+$i*rand(0,2), $charcolor,$font, $str);
 		
 	}
 	
@@ -168,7 +168,6 @@ for($i=0;$i<4;$i++){
 	$str1.=$c[$num];
 }
 $_SESSION[CKCODE]=$str1;
-
 $this->chekcode($str1);
 }	
 
