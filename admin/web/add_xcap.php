@@ -31,9 +31,9 @@ if(!isset($_SESSION[USER])){
 		$xcap_content_fee=$lg->ckinput($_POST["content_fee"]);
 
 		echo $sql="insert into xcap (title,gotheme,keyword,des,img_path,author,goday,time,
-		gocity, citypic, content_desc, content_fee, content_needknow, startplace, mile) 
+		gocity, content_desc, content_fee, content_needknow, startplace, mile) 
 		values('$xcap_title','$xcap_theme','$xcap_keyword','$xcap_des','$xcap_keypic','$xcap_author',
-		'$xcap_goday','$xcap_time','$xcap_gocity', '$xcap_citypic',
+		'$xcap_goday','$xcap_time','$xcap_gocity', 
 		'$xcap_content_desc', '$xcap_content_fee', '$xcap_content_needknow', '$startplace', '$mile')";
 		if(!empty($xcap_keypic)){
 		if($lg->imd($sql)){
@@ -159,7 +159,7 @@ if(!isset($_SESSION[USER])){
 				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新增一个地区 ：<input type = "text" name="newarea" /> 
 			</td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td></td>
 			<td >地区图片</td>
 			<td>
@@ -168,7 +168,7 @@ if(!isset($_SESSION[USER])){
 				<span id="cpic"></span>
 				<input type="hidden" id="citypicfile" name="citypicfile" />
 				</td>
-		</tr>		
+		</tr>		 -->
 		<!-- <tr>
 			<td></td>
 			<td >行程价格：</td>

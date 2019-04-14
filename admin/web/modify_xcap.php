@@ -20,8 +20,6 @@ if(!isset($_SESSION[USER])){
 		}
 	}
 	$xcap_arr1["godate"] = $date;
-	
-
 	$str_info = $str_go = $str_prompt = '';
 	if(isset($_POST["submit"])){
 		$xcap_title=$lg->ckinput($_POST["title"]);
@@ -65,10 +63,13 @@ if(!isset($_SESSION[USER])){
 		if(empty($xcap_keypic)) $xcap_keypic=$xcap_arr1["img_path"];
 		if(empty($xcap_citypic)) $xcap_citypic=$xcap_arr1["citypic"];
 
-		$sql="update xcap set title='$xcap_title',keyword='$xcap_keyword',des='$xcap_des',img_path='$xcap_keypic',
+	    $sql="update xcap set title='$xcap_title',keyword='$xcap_keyword',des='$xcap_des',img_path='$xcap_keypic',
 		author='$xcap_author', goday='$xcap_goday',gotheme='$xcap_theme', gocity='$xcap_gocity', startplace='$startplace', content_desc='$xcap_content_desc', 
 		content_needknow='$xcap_content_needknow',citypic='$xcap_citypic', content_fee='$xcap_content_fee', mile='$mile' where id='$id'";
-
+		$sqlImg = '';
+		if($xcap_citypic !== $xcap_arr1["citypic"]) {
+			$sqlImg = "update xcap set citypic='$xcap_citypic' where gocity='$xcap_gocity' and id != '$id'";
+		}
 		// $id = $xcap_arr1['id'];
 		// $sqldate = "update xcdate (godate, gomonth, xcapid) values";
 		// $newDatesNum = count($xcap_godates);
@@ -89,8 +90,14 @@ if(!isset($_SESSION[USER])){
 		// }
 
 		if($lg->imd($sql)){
+			if($sqlImg && $lg->imd($sqlImg)) {
+				$str_info=$lg->outalert("修改成功!");			
+				$str_go=$lg->gopage("man_xcap.php");		
+			} else {
+				$str_prompt=$lg->outalert("地区主图片修改没有成功！");
+			}
 			$str_info=$lg->outalert("修改成功!");			
-			$str_go=$lg->gopage("man_xcap.php");		
+			$str_go=$lg->gopage("man_xcap.php");	
 		}else{
 			$str_prompt=$lg->outalert("修改出错啦!再试试");
 		}
@@ -159,7 +166,7 @@ if(!isset($_SESSION[USER])){
 		<tr>
 			<td ></td>
 			<td >主题：</td>
-			<td>从已有选择：<select name="theme" style="width:120px;">
+			<td>从已有选择：<select name="theme" id="theme" style="width:120px;">
 				<?php 
 				$sql = 'select distinct(gotheme) from xcap where gotheme !=""';
 				$themes = $lg->select_arr2($sql);
@@ -169,13 +176,14 @@ if(!isset($_SESSION[USER])){
 				<?php }?>
 				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				修改主题 ：<input type = "text" name="newtheme" value="<?php echo $xcap_arr1['gotheme'];?>" /> 
-				</td>
+				<button id="delTheme">删除此主题</button>
+			</td>
 		</tr>
 		<!-- 地区 -->
 		<tr>
 			<td ></td>
 			<td >地区：</td>
-			<td>从已有选择：<select name="area" style="width:120px;">
+			<td>从已有选择：<select name="area" id="area" style="width:120px;">
 				<?php 
 				$sql = 'select distinct(gocity) from xcap where gocity != ""';
 				$themes = $lg->select_arr2($sql);
@@ -184,6 +192,7 @@ if(!isset($_SESSION[USER])){
 						<option value="<?php echo $themes[$i][0];  ?>" <?php if($themes[$i][0] == $xcap_arr1['gocity']) {?>selected="selected"<?php }?> ><?php echo $themes[$i][0]; ?></option>
 				<?php }?>
 				</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改地区 ：<input type = "text" name="newarea" value="<?php echo $xcap_arr1['gocity'];?>" /> 
+				<button id="delArea">删除此地区</button>
 			</td>
 		</tr>	
 		<tr>
@@ -193,7 +202,7 @@ if(!isset($_SESSION[USER])){
 				<input type="file" name="citypic" id="citypic" onchange="return ajaxFileUpload('citypic');"/>
 				<img id="loading" src="loading.gif" style="display:none;" />			
 				<span id="cpic"><img src="<?php echo PATH_IMG.$xcap_arr1["citypic"];?>" /></span>
-				<input type="hidden" id="citypicfile" name="citypicfile" />
+				<input type="hidden" value="<?php echo $xcap_arr1["citypic"];?>" id="citypicfile" name="citypicfile" />
 				</td>
 		</tr>		
 		<!-- <tr>
@@ -389,9 +398,35 @@ function ajaxFileUpload(type)
 				}else{
 					return false;
 					}
-				});
-				
 			});
+			// 删除主题和地区
+			$('#delArea').click( function() {
+				if(!confirm('你确定删除此地区吗？')) return;
+				var area = $.trim($('#area').val());
+				$.get('del_tharea.php?type=area&name='+area, function(res){
+					if(res.code != 0) {
+						alert('删除出错！')
+						return;
+					} else {
+						alert('删除成功');
+						window.location.href="modify_xcap.php?id=<?php echo $id; ?>";
+					}
+				}, 'json')
+			})
+			$('#delTheme').click( function() {
+				if(!confirm('你确定删除此主题吗？')) return;
+				var theme = $.trim($('#theme').val());
+				$.get('del_tharea.php?type=theme&name='+theme, function(res){
+					if(res.code != 0) {
+						alert('删除出错！')
+						return;
+					} else {
+						alert('删除成功');
+						window.location.href="modify_xcap.php?id=<?php echo $id; ?>";
+					}				
+				}, 'json')
+			})
+		});
 </script>
 <script>
 // $(function(){

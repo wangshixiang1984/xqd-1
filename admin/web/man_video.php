@@ -8,11 +8,12 @@ if(!isset($_SESSION[USER])){
 	$video_num=count($video_arr);
 	$str_prompt = $str_gopage = '';
 	if(isset($_POST["video_submit"])){
-		$video_url=$_POST["url"];
+		// $video_url=$_POST["url"];
 		$video_local_url = $_POST['video'];
 		$video_time=date("Y-m-d h:i:s",time());
 		$bz=$_POST["bz"];
-		$sql="insert into video (video_url,lurl,time,name) values('$video_url','$video_local_url','$video_time','$bz')";
+		$pic = $_POST['vpic'];
+		echo $sql="insert into video (lurl,time,name,pic) values('$video_local_url','$video_time','$bz', '$pic')";
 		if($lg->imd($sql)){
 			$str_prompt=$lg->outalert("添加视频成功!");
 			$str_gopage=$lg->gopage("man_video.php");
@@ -75,11 +76,34 @@ function ajaxFileUpload()
 					alert(data.err)
 					txt = '重新上传';
 				}
-				$('#video').val(data.msg);
+				$('#video').val(data.filename);
 				processNum.attr('disabled',false).val(txt);//数显进度
 			}
 		})
     }
+
+	return false;
+}
+function ajaxPicUpload()
+{
+
+		var file = document.getElementById('mpic').files[0];
+		var form = new FormData();
+		form.append('mpic',file);
+		$.ajax({
+			url: 'doajaxfileupload.php?inputname=mpic',//上传地址
+			async: true,//异步
+			type: 'post',//post方式
+			data: form,//FormData数据
+			processData: false,//不处理数据流 !important
+			contentType: false,//不设置http头 !important
+			dataType: 'json',
+		
+			success: function(data){//上传成功回调
+				document.getElementById("spic").innerHTML='<img src="' + data.msg + '" />';
+				document.getElementById("vpic").value=data.filename;
+			}
+		})
 
 	return false;
 }
@@ -92,20 +116,25 @@ function ajaxFileUpload()
 	<tbody>
 	<tr>
 		<td style="width:20%">视频标题：<input type="text" name="bz" value="" /></td>
-		<td style="width:20%">
-		外部视频地址：<input type="text" name="url" value="" style="width:200px;" /><span>(第三方平台视频地址)</span></td>
-		<td style="width:30%">
+		<!-- <td style="width:20%">
+		外部视频地址：<input type="text" name="url" value="" style="width:200px;" /><span>(第三方平台视频地址)</span></td> -->
+		<td style="width:10%">
+		视频封面图：<input type="file" name="mpic"  id="mpic" onchange="ajaxPicUpload()" value="" />
+		<input type="hidden" name="vpic" id="vpic">
+			<span id="spic"></span>
+	</td>
+		<td style="width:45%">
 		添加视频文件：<input type="file" name="keypic" id="keypic" /> 
 		<input type="hidden" id="video" value="" name="video" />
 		<input type="button" onclick="ajaxFileUpload();" id="upload" style=" min-width:80px;" value="上传" /></td>
-		<td style="width:30%"> <input type="submit" name="video_submit" value="添加视频" /></td>
+		<td style="width:25%"> <input type="submit" name="video_submit" value="添加视频" /></td>
 	</tr>
 	<tr>
 		<td colspan="4" style="height:50px;text-align:center;">视频列表</td>
 	</tr>
 	<tr>
 		<td>标题</td>
-		<td>外部视频地址</td>
+		<td>视频封面图</td>
 		<td>本站视频地址</td>
 		<td>操作</td>
 	</tr>
@@ -115,11 +144,11 @@ function ajaxFileUpload()
 	?>
 	<tr>
 		<td style="width:20%"><?php echo $video_arr[$i]["name"]?></td>
-		<td style="width:20%"><?php echo $video_arr[$i]["video_url"]?> </td>
+		<td style="width:20%"><img src='<?php echo PATH_IMG.$video_arr[$i]["pic"]?>' /> </td>
 		<td>
 			<div class="zy_media" style="width: 200px; height: 150px;">
 			<video  data-config='{"mediaTitle": "<?php echo $video_arr[$i]["name"]?>"}'>
-        	<source src="<?php echo $video_arr[$i]['lurl'] ?>" type="video/mp4">
+        	<source src="<?php echo PATH_IMG."video/".$video_arr[$i]['lurl'] ?>" type="video/mp4">
       	  	您的浏览器不支持HTML5视频
    	 		</video></div></td>
 		<td style="width:30%"> 
