@@ -55,7 +55,7 @@
         <div class="fl"><i></i><h3>出行时间</h3></div>
     </div>
     <div class="con mt10 clr-all">
-        <ul class="month mt10">
+        <ul class="month mt15">
             <li><a href="/h5/page/time/index.php?mon=1"><img src="./public/images/m1.png" /></a></li>
             <li><a href="/h5/page/time/index.php?mon=2"><img src="./public/images/m2.png" /></a></li>
             <li><a href="/h5/page/time/index.php?mon=3"><img src="./public/images/m3.png" /></a></li>
@@ -64,7 +64,7 @@
             <li><a href="/h5/page/time/index.php?mon=6"><img src="./public/images/m6.png" /></a></li>
            
         </ul>
-        <ul class="month mt10">
+        <ul class="month mt20">
             <li><a href="/h5/page/time/index.php?mon=7"><img src="./public/images/m7.png" /></a></li>
             <li><a href="/h5/page/time/index.php?mon=8"><img src="./public/images/m8.png" /></a></li>
             <li><a href="/h5/page/time/index.php?mon=9"><img src="./public/images/m9.png" /></a></li>
@@ -113,7 +113,7 @@
         <div class="stc swiper-slide">
             <a href="/h5/page/detail/index.php?id={{data.id}}">
                 <div class="lpic"><img src="<?php echo $imgDir;?>{{data.img_path}}" /></div>
-                <p class='tit t-l'>{{@data.title}}</p>
+                <p class='tit t-l fone-ellipsis'>{{@data.title}}</p>
             </a>
             <div class="date mt10">出发日期：{{data.godate}}</div>
             <div class="pri mt10"><span class="f14">￥{{data.price}}</span> /人起</div>
@@ -217,14 +217,14 @@
         })();
         // 近期行程
         (function(){
-            var cdata3 = new Cdata('recentplace', './page/recentplan/getRecent.php?size=10',{
+            var cdata3 = new Cdata('recentplace', './page/recentplan/getRecent.php?size=4',{
                 hideText: true,
             });
             cdata3.setId('recent').getInfo();
         })();
         // 攻略
         (function(){
-            var cdata4 = new Cdata('strategy', './page/strategy/getList.php?size=10',{
+            var cdata4 = new Cdata('strategy', './page/strategy/getList.php?size=3',{
                 hideText: true,
             });
             cdata4.setId('stra').getInfo();

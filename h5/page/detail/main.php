@@ -33,11 +33,11 @@
             <li>纯游玩</li>
             <li>准四星酒店</li>
         </ul> -->
-        <p class="p10 ftwo-ellipsis des">
+        <p class="p10 ftwo-ellipsis1 des1">
             <?php echo $info['des']; ?>
         </p>
         <div class="row-lr dt-btn mt10">
-            <div class="col-l"><b class="f16 f-bold"> 
+            <div class="col-l"><b class="f-bold"> 
             <?php if($info['gotheme'] == "AA制自驾"){?>
                         费用  AA
             <?php }else {?>
@@ -90,6 +90,8 @@
     <div class="ptb20 dt-xc">
         <p class="tit">行程安排</p>
         <?php 
+        // if($xcdetail)  {
+            if(!$xcdetail) $xcdetail = [];
             for($i=0;$i<count($xcdetail); $i++){
                 if(!empty($xcdetail[$i]['daypic'])){
                     $pics = explode(',', $xcdetail[$i]['daypic']);

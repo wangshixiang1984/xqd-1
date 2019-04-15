@@ -57,7 +57,8 @@
         cdata.getInfo($('.act'), 3, curMon);
         $('#dstion li').click(function(){
             var city = $(this).data('city');
-            cdata.getInfo($(this), 3, city);
+            cdata.init().getInfo($(this), 3, city);
+            
         })
       
         $(window).scroll(function(e){

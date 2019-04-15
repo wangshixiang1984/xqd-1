@@ -62,7 +62,8 @@
         cdata.getInfo($('.act'), 5, curMon+'月');
         $('#dstion li').click(function(){
             var mon = $(this).data('month');
-            cdata.getInfo($(this), 5, mon);
+            cdata.init().getInfo($(this), 5, mon);
+            
         })
       
         $(window).scroll(function(e){

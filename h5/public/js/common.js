@@ -55,7 +55,7 @@ function Cdata(selector, url, options) {
 Cdata.prototype.getInfo = function(obj, id, keyword) {
     var self = $(obj);
     var _this = this;
-    
+   
     if(this.infoObj.isLoading || this.infoObj.isEnd) return;
     if(self.hasClass('act') || typeof obj === 'undefined') {
         this.infoObj.curPage++;
@@ -112,5 +112,9 @@ Cdata.prototype.render =  function(id, container){
 }
 Cdata.prototype.setId = function(id) {
     this.scriptId = id;
+    return this;
+}
+Cdata.prototype.init = function() {
+    this.infoObj.isEnd = false;
     return this;
 }

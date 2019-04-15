@@ -15,7 +15,7 @@
         <div class="con mt10 clr-all f12 brd-btm pb10">
             <a href="./detail.php?id={{data.id}}">
                 <div class="lpic"><img src="<?php echo $imgDir?>{{data.img_path}}" /></div>
-                <p class='tit t-l f14 f-bold fone-ellipsis mt5'>{{data.title}}</p>
+                <p class='tit t-l f14 f-bold fone-ellipsis mt5'>{{@data.title}}</p>
                 <p><span class="fl">作者：{{data.author}}</span><span class="fr">浏览：{{data.clicktime}}</span></p>
             </a>
         </div>

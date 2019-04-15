@@ -1446,6 +1446,7 @@ nav.menu.com .item > li{
     font-size: 0.16rem;
     padding: 0.1rem;
     /* text-align: center; */
+    line-height: 0.24rem;
 }
 .dt-head .lm{
     color: #fff;
@@ -1456,7 +1457,7 @@ nav.menu.com .item > li{
     background: linear-gradient(to bottom,#3f76b0, #90c2f7); */
 }
 .dt-head .des{
-    height: 0.54rem;
+    height: 0.50rem;
     overflow: hidden;
 }
 .dt-head .lm li{
@@ -1527,6 +1528,7 @@ nav.menu.com .item > li{
     width: 40%;
     text-align: center;
     padding: 0.1rem;
+    height: 0.4rem;
 }
 .dt-btn .col-r{
     background-color: #3b92ed;
@@ -1685,6 +1687,7 @@ nav.menu.com .item > li{
     font-size: 0.16rem;
     /* text-align: center; */
     padding: 0.1rem;
+    line-height: 0.24rem;
 }
 .strage-wp .con{
     font-size: 0.12rem !important;
