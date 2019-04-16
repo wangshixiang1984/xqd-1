@@ -52,15 +52,15 @@ class log extends opsql{
 	function cklog($username,$psw,$ckcode,$targetpage){
 		$sql="select * from ".TBNAME." where ".FIELDNAME."='$username'and ".FIELDPSW."='$psw'";
 				
+			// $rs=$this->select_arr1($sql);
+		if(($ckcode==0 && !isset($_SESSION[CKCODE])) || (strtolower($_SESSION[CKCODE])==strtolower($ckcode))){
 			$rs=$this->select_arr1($sql);
-		// if(($ckcode==0 && !isset($_SESSION[CKCODE])) || (strtolower($_SESSION[CKCODE])==strtolower($ckcode))){
-		// 	$rs=$this->select_arr1($sql);
-		// 	$switch=1;
-		// }else{
-		// 	return $this->logstr="<script language='javascript'>
-		// 	alert('验证码输入错误!'); </script>";
-		// 	$switch=0;
-		// }
+			$switch=1;
+		}else{
+			return $this->logstr="<script language='javascript'>
+			alert('验证码输入错误!'); </script>";
+			$switch=0;
+		}
 		$switch = 1;
 		if($switch==1){			
 			if($rs){
