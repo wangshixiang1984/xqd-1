@@ -4,14 +4,15 @@ include('../conf/log.class.php');
 
 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$pageSize = 5;
+$pageSize = 10;
 
 //所有行程,分页
 //默认查询所有
 $sql = "select xcap.title, xcap.passed, xcap.id, xcap.img_path, xcap.gotheme, xcap.startplace, xcap.goday, xcap.gocity, xcdate.price, xcdate.gomonth, xcdate.godate, xcdate.minprice from xcap left join xcdate on xcdate.xcapid=xcap.id";
 $sql_str = '';
 if(empty($filter)){
-	exit(json_decode(['status' => 'err', code => -1]));
+
+	// exit(json_encode(['status' => 'err', "code" => -1]));
 }else{
 	foreach($filter as $id => $keyword){
 		//按主题
@@ -110,6 +111,6 @@ $res = [
 		'currentPage' => $page, 
 		'startPage'=> $startPage, 
 		'endPage' => $endPage
-	] 
+	]
 ];
 exit(json_encode($res, JSON_UNESCAPED_UNICODE));

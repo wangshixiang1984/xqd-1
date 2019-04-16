@@ -70,7 +70,7 @@
         </li>
         <li>
             <a href="/h5/page/recentplan/"><i class="mr10 iconfont iconshehuade"></i><span>近期行程</span></a>
-            <a href="/h5/page/pinche/"><i class="mr10 iconfont iconyuding"></i><span>拼车自驾</span></a>
+            <a href="/h5/page/pinche/"><i class="mr10 iconfont iconwulianwang-"></i><span>拼车自驾</span></a>
         </li>
         <li>
             <a href="/h5/page/customization/"><i class="mr10 iconfont iconyuding"></i><span>行程定制</span></a>
