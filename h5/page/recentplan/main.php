@@ -1,5 +1,5 @@
 <?php
-  $sql_a = "select * from adver where type=9 order by id desc limit 0, 1";
+  $sql_a = "select * from adver where type=3 order by id desc limit 0, 1";
   $adv = $lg->select_arr1($sql_a);
 ?>
 <div class="sp-wp">
