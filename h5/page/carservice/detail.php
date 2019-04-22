@@ -5,6 +5,8 @@ $adv = $lg->select_arr1($sql_a);
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $sql = "select * from car where id=".$id;
 $data = $lg->select_arr1($sql);
+$tels = $lg->select_arr1('select * from gywm');
+
 ?>
 <i class="kfu iconfont iconkefu"></i>
 <div class="cinfo-wp">
@@ -41,14 +43,14 @@ $data = $lg->select_arr1($sql);
             <p>租赁费用：<?php echo $data['price'] ;?>元/天</p>
             <p class="hj">合计：￥<?php echo $data['price'] ;?></p>
         </div>
-        <div class="t-c"><button class="btn btn-solid mt20 mb10">租赁电话：133-5084-1118</button></div>
+        <div class="t-c"><button class="btn btn-solid mt20 mb10">租赁电话：<?php echo $tels['tstel'] ?> / <?php echo $tels['xstel'] ?></button></div>
     </div>
 </div>
 
 <script>
     // 租车客服
     $('.kfu').click(function() {
-        window.location.href = "tel:13350841118";
+        window.location.href = "tel:<?php echo $tels['zxtel'] ?>";
     })
 </script>
 <?php

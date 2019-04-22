@@ -11,12 +11,27 @@
     </div>
 </div>
 <script id="list" type="text/html">
-    {{each data.list data index}}
+    <!-- {{each data.list data index}}
         <div class="con mt10 clr-all f12 brd-btm pb10">
             <a href="./detail.php?id={{data.id}}">
                 <div class="lpic"><img src="<?php echo $imgDir?>{{data.img_path}}" /></div>
                 <p class='tit t-l f14 f-bold fone-ellipsis mt5'>{{@data.title}}</p>
                 <p><span class="fl">作者：{{data.author}}</span><span class="fr">浏览：{{data.clicktime}}</span></p>
+            </a>
+        </div>
+    {{/each}} -->
+    {{each data.list data index}}
+        <div class="row mt10 yj">
+            <div class="m-mod">
+                <a href="/h5/page/strategy/detail.php?id={{data.id}}" class="m-item">
+                    <img src="<?php echo $imgDir;?>{{data.img_path}}" />
+                </a>
+            </div>
+            <a href="/h5/page/strategy/detail.php?id={{data.id}}" class="m-mod">
+                <p class="f14 f-bold t-c fone-ellipsis">{{@data.title}}</p>
+                <p class="f12 des f4-ellipsis">
+                    {{@data.des}}    
+                </p>
             </a>
         </div>
     {{/each}}

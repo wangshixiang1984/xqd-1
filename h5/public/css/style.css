@@ -442,6 +442,9 @@ h1, h2, h3, h4, h5, h6{
 .mt30{
     margin-top:0.3rem;
 }
+.mt40{
+    margin-top:0.4rem;
+}
 
 .ml0{
     margin-left: 0!important;
@@ -1015,7 +1018,8 @@ nav.menu.com .item > li{
 }
 .m-lay .stc .lpic{
     /* padding: 0.1rem; */
-    max-height: 1.8rem;
+    /* max-height: 1.8rem; */
+    height: auto;
     overflow: hidden;
 }
 .m-lay.us .lpic{
@@ -1105,12 +1109,13 @@ nav.menu.com .item > li{
 .m-lay .nav li.bullet{
     color: #fff;
     font-size: 0.12rem;
-    padding: 0.05rem 0.2rem;
+    padding: 0.05rem 0;
     display: block;
     float: left;
+    width: 12.5%;
 }
 .m-lay .nav li.active{
-    padding:0.05rem 0.2rem;
+    padding:0.05rem 0;
     background: #fff;
     box-shadow: 0 2px 5px #ccc;
     position: relative;
@@ -1126,7 +1131,7 @@ nav.menu.com .item > li{
     overflow: hidden;
     /* width: calc(50% - 5px); */
     position: relative; 
-    height: 0.83rem;   
+    height: 1.1rem;   
 }
 .m-mod > p{
     line-height: 1.5;
@@ -1233,6 +1238,9 @@ nav.menu.com .item > li{
     overflow-x: scroll;
     overflow-y: hidden;  
     white-space: nowrap;
+}
+.m-lay .cate .m-item{
+    height: 0.83rem;
 }
 .m-lay .cate li{
     width: 40%;
@@ -1675,7 +1683,7 @@ nav.menu.com .item > li{
 }
 /* 广告 */
 .com-adv{
-    max-height: 220px;
+    /* max-height: 220px; */
     overflow: hidden;
 }
 

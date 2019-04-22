@@ -49,7 +49,7 @@
         cdata.getInfo($('.act'), 1, 'short');
         $('#dstion li').click(function(){
             var type = $(this).data('type');
-            cdata.getInfo($(this), 1, type);
+            cdata.init().getInfo($(this), 1, type);
         })
       
         $(window).scroll(function(e){

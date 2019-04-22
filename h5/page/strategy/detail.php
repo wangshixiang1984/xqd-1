@@ -21,6 +21,7 @@
         <?php echo html_entity_decode($info['content']); ?>
     </div>
 </article>
+<?php if(!empty($detailInfo)) {?>
 <div class="strage-xg mb20 p10 bg-w">
     <h3><?php echo $detailInfo['title'] ?></h3>
     <p class="f12">出发城市：<?php echo $detailInfo['gocity'] ?></p>
@@ -28,6 +29,7 @@
     <p class="f12">￥<b class="price f16"><?php echo $detailInfo['minprice'] ?></b>元/起</p>
     <p><a class="mt20" href="/h5/page/detail/index.php?id=<?php echo $detailInfo['xcapid'] ?>" ><button class="btn btn-solid w100">线路明细</button></a></p>
 </div>
+<?php } ?>
 <?php
 include_once '../../common/footer.php';
 ?>
