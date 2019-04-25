@@ -85,8 +85,8 @@ function tosearch(obj){
 													<a href="http://www.xqdzjy.com" class="othernav currentnav">成都</a> 
 													<a href="#" class="othernav">重庆</a> 
 												</p>
-											<p style="text-align: right;color:white;"><img class="fr-dii" src="/Theme/Simple/images/phone.png" style="width: 16px; ">
-											&nbsp; 18908221119 / 17360090952 / 座机：028-83918255 / 传真：028-83966588   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+												<?php $tels = $lg->select_arr1('select * from gywm');?>
+											<p style="text-align: right;"><img class="fr-dii" src="/Theme/Simple/images/phone.png" style="width: 16px;">&nbsp; <?php echo $tels['tstel'] ?> / <?php echo $tels['zxtel'] ?> / 座机：<?php echo $tels['xstel'] ?>    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 													<a href="javascript:void(0)">登录</a> &nbsp;/ &nbsp; <a href="javascript:void(0)">注册</a>
 												</p>
 									</div>

@@ -170,6 +170,12 @@ $(function() {
 	$("img.lazy").lazyload({
 		effect : "fadeIn"
 	});
+	function goMobile() {
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        window.location.href = "/h5";
+    } 
+	}
+	// goMobile();
 });
 
 var _hmt = _hmt || [];

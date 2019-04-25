@@ -1,5 +1,9 @@
 ﻿
 <?php
+	// $domain = $_SERVER['SERVER_NAME'];
+	// if(strpos($domain, 'm.xqdzjy.com') !== false){
+	// 	header("Location:http://www.xqdzjy.com/h5/", TRUE, 301);
+	// }
 	$urlType = 1;
 	$dirNow = '/';
 	include "./head/head_add.php";
@@ -58,7 +62,7 @@
 			<div class="do-element-media-content md" id="swiper_3b99g" data-rows="4" data-phonerows="2" data-initialslide="0" data-slidespercolumn="1">
 			<ul class="do-element-media-ul x do-content-grid ">
 				<?php 
-					$info = $lg->select_arr2('select xcap.id, xcap.passed, xcap.gotime,	xcap.goday, xcap.title, xcap.img_path, xcap.gocity,xcdate.price,xcdate.godate from xcap left join xcdate on xcap.id=xcdate.xcapid where hide != 1 and istop != 1 group by xcdate.xcapid order by xcap.px desc limit 6');
+					$info = $lg->select_arr2('select xcap.id, xcap.passed,	xcap.goday, xcap.title, xcap.img_path, xcap.gocity,xcdate.price,xcdate.godate from xcap left join xcdate on xcap.id=xcdate.xcapid where hide != 1 and istop != 1 group by xcdate.xcapid order by xcap.px desc limit 6');
 					for($i = 0; $i < count($info); $i ++){
 				?>
 				<li class="do-element-media-li " data-wow-delay=".0s" style="width:33.3%; height:360px; margin:10px 0 20px 0;">
@@ -149,7 +153,7 @@
 					<div class="do-element-media-content md swiper-container do-list-swiper swiper-container-horizontal" data-rows="3" data-phonerows="1" data-initialslide="0" data-slidespercolumn="1">
 						<ul class="do-element-media-ul x do-content-grid  swiper-wrapper" style="height:511px;">
 						<?php
-							$list = $lg->select_arr2('select xcap.id, xcap.passed, xcap.gotime,	xcap.goday, xcap.title, xcap.startplace, xcap.img_path, xcap.gocity,xcdate.price,xcdate.godate from xcap left join xcdate on xcap.id=xcdate.xcapid where hide != 1 and istop = 1 group by xcapid  order by px desc, xcap.id desc');	
+							$list = $lg->select_arr2('select xcap.id, xcap.passed,	xcap.goday, xcap.title, xcap.startplace, xcap.img_path, xcap.gocity,xcdate.price,xcdate.godate from xcap left join xcdate on xcap.id=xcdate.xcapid where hide != 1 and istop = 1 group by xcapid  order by px desc, xcap.id desc');	
 							for ($i = 0; $i < count($list); $i ++){
 						?>
 						<li class="do-element-media-li  swiper-slide swiper-slide-active" data-wow-delay=".0s" style="width: 341.333333333333px;">
@@ -157,7 +161,7 @@
 								<div class="do-media-image-box"  style="height:172px;">
 									<div class="do-media-image" style="padding-top:82.01892744479495%;">
 										<div class="do-media-image-conter">
-											<img class="scrollLoading loadingEnd" data-src="<?php echo IMG_DIR.$list[$i]['img_path'] ?>" src="<?php echo IMG_DIR.$list[$i]['img_path'] ?>" style="margin-top: 0%;height:172px;">
+											<img class="scrollLoading loadingEnd" data-src="<?php echo IMG_DIR.$list[$i]['img_path'] ?>" src="<?php echo IMG_DIR.$list[$i]['img_path'] ?>" style="margin-top: 0%;width: 100%;height:172px;">
 										</div>
 									</div>
 								</div>
@@ -317,4 +321,4 @@
 	</div>
 </div>
 
-<?php include('/head/foot.php'); ?>
+<?php include('./head/foot.php'); ?>

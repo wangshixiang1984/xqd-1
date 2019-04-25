@@ -20,12 +20,18 @@ $(function(){
     // footer 中事件
     //打电话
     $('#gotel').click(function() {
-        window.location.href="tel:13980001984";
+        var tel = $(this).attr('phone');
+        window.location.href="tel:" + tel;
     })
     
     //公共menu 中事件
     $('#closeComMenu').click(function(){
         $('#menucom').fadeOut(200);
+    })
+
+    // 顶部
+    $('.totop').click(function(){
+        $(window).scrollTop(0);
     })
 
 })

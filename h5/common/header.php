@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
     <title>首页</title>
     <link rel="stylesheet" href="/h5/public/css/mui.css">
     <link rel="stylesheet" href="/h5/public/css/mui.picker.min.css">

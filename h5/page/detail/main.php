@@ -46,7 +46,7 @@
                     }else{ 
                         echo '￥'.$minprice.'<span class="f12">/人起</span>'; 
             }}?></b></div>
-            <div class="col-r"><i></i>报名热线:028-83918255</div>
+            <div class="col-r">报名热线:028-83918255</div>
         </div>
         <div class="dt-mwrap lm">
             <div class="row-lr">
@@ -153,15 +153,15 @@
 
 <script src="/h5/public/js/swiper.js"></script>
 <script>
-var mySwiper3 = new Swiper ('#swiper3', {
-        loop: true, // 循环模式选项
-        // 如果需要分页器
-        pagination: {
-        el: '.swiper-pagination',
-        bulletActiveClass: 'index-bullet-active',
-        },
+// var mySwiper3 = new Swiper ('#swiper3', {
+//         loop: true, // 循环模式选项
+//         // 如果需要分页器
+//         pagination: {
+//         el: '.swiper-pagination',
+//         bulletActiveClass: 'index-bullet-active',
+//         },
 
-    })  
+//     })  
 
 $(function() {
     // 阅读更多 收起

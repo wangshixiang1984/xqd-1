@@ -67,8 +67,12 @@ if(!isset($_SESSION[USER])){
 		author='$xcap_author', goday='$xcap_goday',gotheme='$xcap_theme', gocity='$xcap_gocity', startplace='$startplace', content_desc='$xcap_content_desc', 
 		content_needknow='$xcap_content_needknow',citypic='$xcap_citypic', content_fee='$xcap_content_fee', mile='$mile' where id='$id'";
 		$sqlImg = '';
-		if($xcap_citypic !== $xcap_arr1["citypic"]) {
-			$sqlImg = "update xcap set citypic='$xcap_citypic' where gocity='$xcap_gocity' and id != '$id'";
+		if($xcap_citypic != $xcap_arr1["citypic"]) {
+			$sqlImg = "update xcap set citypic='$xcap_citypic' where gocity='$xcap_gocity'";
+			if(!$lg->imd($sqlImg)) {
+				$str_info=$lg->outalert("地区图片修改失败!");		
+				exit();
+			}
 		}
 		// $id = $xcap_arr1['id'];
 		// $sqldate = "update xcdate (godate, gomonth, xcapid) values";
@@ -89,15 +93,10 @@ if(!isset($_SESSION[USER])){
 		// 	}
 		// }
 
+	
 		if($lg->imd($sql)){
-			if($sqlImg && $lg->imd($sqlImg)) {
-				$str_info=$lg->outalert("修改成功!");			
-				$str_go=$lg->gopage("man_xcap.php");		
-			} else {
-				$str_prompt=$lg->outalert("地区主图片修改没有成功！");
-			}
 			$str_info=$lg->outalert("修改成功!");			
-			$str_go=$lg->gopage("man_xcap.php");	
+			$str_go=$lg->gopage("man_xcap.php");		
 		}else{
 			$str_prompt=$lg->outalert("修改出错啦!再试试");
 		}

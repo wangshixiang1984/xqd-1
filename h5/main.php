@@ -156,10 +156,10 @@
     <div class='tit us'>
         <div class="fl"><i></i><div class="tpic"><img src="./public/images/at.png" /></div></div>
     </div>
-    <div class="con mt10 clr-all">
+    <div class="con mt10 mb5 clr-all">
         <a href="/h5/page/about/">
-            <div class="lpic"><img src="<?php echo $imgDir;?>{{data.list.pic}}" /></div>
-            <p class='tit t-l f14 f-bold f3-ellipsis mt5'>{{@data.list.title}}</p>
+            <div class="lpic"><img src="/htmleditor/attached/image/mainpic/201804167856.jpg" /></div>
+            <p class='tit t-l f14 f3-ellipsis mt50'>{{@data.list.title}}</p>
         </a>
     </div>
 </script>
@@ -174,11 +174,15 @@
                 callback: function() {
                     var mySwiper1 = new Swiper ('#swiper1', {
                             loop: true, // 循环模式选项
+                            autoplay:{
+                                delay: 10000
+                            },
+
                             // 如果需要分页器
                             pagination: {
-                            el: '.swiper-pagination',
-                            bulletActiveClass: 'index-bullet-active',
-                        }
+                                el: '.swiper-pagination',
+                                bulletActiveClass: 'index-bullet-active',
+                            }   
                     })   
                 }
             });
@@ -238,10 +242,5 @@
         })();
     });
 </script>
-<script>
 
-     
-  
-  
-</script>
 
