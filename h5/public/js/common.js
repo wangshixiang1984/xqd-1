@@ -23,6 +23,14 @@ $(function(){
         var tel = $(this).attr('phone');
         window.location.href="tel:" + tel;
     })
+    $('#gotelzx').click(function() {
+        var tel = $(this).attr('phone');
+        window.location.href="tel:" + tel;
+    })
+    $('#gotelts').click(function() {
+        var tel = $(this).attr('phone');
+        window.location.href="tel:" + tel;
+    })
     
     //公共menu 中事件
     $('#closeComMenu').click(function(){

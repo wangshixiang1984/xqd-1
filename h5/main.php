@@ -156,10 +156,10 @@
     <div class='tit us'>
         <div class="fl"><i></i><div class="tpic"><img src="./public/images/at.png" /></div></div>
     </div>
-    <div class="con mt10 mb5 clr-all">
+    <div class="con clr-all">
         <a href="/h5/page/about/">
             <div class="lpic"><img src="/htmleditor/attached/image/mainpic/201804167856.jpg" /></div>
-            <p class='tit t-l f14 f3-ellipsis mt50'>{{@data.list.title}}</p>
+            <p class='tit t-l f14 f3-ellipsis mt10 '>{{@data.list.title}}</p>
         </a>
     </div>
 </script>
