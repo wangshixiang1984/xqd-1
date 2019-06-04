@@ -197,7 +197,7 @@
         })();
         // 热门推荐
         (function(){
-            var cdata2 = new Cdata('hotplace', './page/recentplan/getRecent.php?size=8',{
+            var cdata2 = new Cdata('hotplace', './page/recentplan/getRecent.php?size=8&index=1',{
                 hideText: true,
                 callback: function() {
                     var mySwiper2 = new Swiper ('#swiper2', {

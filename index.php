@@ -23,7 +23,7 @@
 					$info = $lg->select_arr2($sql);
 					for($i = 0; $i < count($info); $i ++){
 				?>
-						<div class="swiper-slide"><a href="<?php echo $info[$i]['pic_link']; ?>"><img src="<?php echo IMG_DIR.$info[$i]['img_path']; ?>" alt="<?php echo $info[$i]['title']; ?>" width="100%"></a></div>
+						<div class="swiper-slide"><a href="<?php echo $info[$i]['pic_link']; ?>" style="display:block;"><img src="<?php echo IMG_DIR.$info[$i]['img_path']; ?>" alt="<?php echo $info[$i]['title']; ?>" width="100%"></a></div>
 					<?php } ?>						
 					</div>
       <!-- 如果需要分页器 -->
